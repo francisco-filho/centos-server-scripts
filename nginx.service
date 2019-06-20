@@ -1,0 +1,13 @@
+[Unit]
+Description=Nginx HTTP server
+After=local-fs.target network.target
+
+[Service]
+PIDFile=/usr/local/nginx/nginx.pid
+ExecStart=/usr/local/sbin/nginx
+ExecStop=/usr/local/sbin/nginx -s stop
+ExecReload=/bin/kill -HUP $MAINPID
+Type=forking
+
+[Install]
+WantedBy=multi-user.target

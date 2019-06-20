@@ -18,4 +18,4 @@ systemctl start mysqld
 
 # ver password
 # grep 'temporary password' /var/log/mysqld.log
-#mysql> alter user 'root'@'localhost' identified by 'Unimedia!';
+#mysql> alter user 'root'@'localhost' identified by 'AbcDef7!';
