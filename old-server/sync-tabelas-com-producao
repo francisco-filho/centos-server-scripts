@@ -1,0 +1,10 @@
+#!/bin/bash
+
+PGSYNC=/portal/scripts/pgsync-postgres
+
+$PGSYNC rotinas.posicoes
+$PGSYNC rotinas.rotinas_execucoes
+$PGSYNC relatorios_dados.gestao_conexao_2017_2s
+
+/usr/bin/psql -U postgres -d portal -c 'REFRESH MATERIALIZED VIEW public.dependencias_subordinadas;' >> ./sync-tabelas.log
+
